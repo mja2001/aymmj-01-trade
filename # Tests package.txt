@@ -1,0 +1,12 @@
+# Tests package
+import pytest
+from src.strategies.main import run_strategy
+from src.core.data import fetch_data
+
+def test_run_strategy():
+    data = run_strategy("sma_crossover", "AAPL", "paper")
+    assert not data.empty, "Data should not be empty"
+
+def test_fetch_data():
+    df = fetch_data("AAPL", "2024-01-01", "2024-01-02")
+    assert len(df) > 0
