@@ -1,0 +1,5 @@
+def calculate_position_size(capital: float, risk_per_trade: float, entry_price: float, stop_loss: float) -> float:
+    """Kelly Criterion-inspired position sizing."""
+    risk_amount = capital * risk_per_trade
+    price_risk = entry_price - stop_loss
+    return risk_amount / price_risk if price_risk > 0 else 0
