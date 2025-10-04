@@ -1,0 +1,15 @@
+# Execution package
+import ccxt
+
+def get_broker(exchange_id: str = "binance"):
+    """Initialize broker exchange."""
+    exchange = getattr(ccxt, exchange_id)()
+    # Load config from env
+    exchange.apiKey = "your_api_key"  # From .env
+    exchange.secret = "your_secret"
+    return exchange
+
+# Example: Place paper order
+def place_paper_order(symbol: str, side: str, amount: float):
+    print(f"Paper {side} order for {amount} {symbol}")
+
