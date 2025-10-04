@@ -1,0 +1,22 @@
+# Strategies package
+import argparse
+from dotenv import load_dotenv
+
+from ..core.data import fetch_data
+
+load_dotenv()
+
+def run_strategy(strategy_name: str, symbol: str, mode: str = "paper"):
+    """Main strategy runner."""
+    data = fetch_data(symbol, "2020-01-01", "2025-01-01")
+    print(f"Running {strategy_name} on {symbol} in {mode} mode")
+    # Placeholder: Load and execute strategy
+    return data
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--strategy", default="sma_crossover")
+    parser.add_argument("--symbol", default="AAPL")
+    parser.add_argument("--mode", default="paper")
+    args = parser.parse_args()
+    run_strategy(args.strategy, args.symbol, args.mode)
