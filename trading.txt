@@ -1,0 +1,12 @@
+trading:
+  symbols: ["SPY", "TSLA"]
+  timeframe: "1d"
+  initial_capital: 100000
+
+risk:
+  max_position_size: 0.1  # 10% of capital
+  stop_loss_pct: 0.05     # 5% stop loss
+
+data:
+  provider: "yfinance"
+  api_key: "${ALPHAVANTAGE_API_KEY}"  # Env var injection
