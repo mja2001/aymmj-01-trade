@@ -1,0 +1,2 @@
+python -m src.strategies.main --mode paper --broker alpaca --symbols SPY,TSLA
+# Monitors and logs trades without real execution
