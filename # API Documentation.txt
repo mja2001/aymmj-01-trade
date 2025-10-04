@@ -1,0 +1,12 @@
+# API Documentation
+
+## Core Module
+- `fetch_data(symbol: str, start: str, end: str) -> pd.DataFrame`: Fetches OHLCV data.
+
+## Strategies
+- `run_strategy(strategy_name: str, symbol: str, mode: str) -> pd.DataFrame`: Executes a strategy.
+
+## Execution
+- `place_paper_order(symbol: str, side: str, amount: float)`: Simulates an order.
+
+For full details, see inline docstrings.
