@@ -1,0 +1,38 @@
+.
+├── src/
+│   ├── __init__.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── data.py          # Data fetching utilities
+│   │   └── risk.py          # Risk management functions
+│   ├── strategies/
+│   │   ├── __init__.py
+│   │   └── main.py          # Strategy entry point
+│   └── execution/
+│       ├── __init__.py
+│       └── broker.py        # Broker integration stubs
+├── tests/
+│   ├── __init__.py
+│   └── test_strategies.py   # Sample tests
+├── docs/
+│   └── api.md               # API documentation
+├── scripts/
+│   └── backtest.py          # Backtesting script
+├── strategies/              # Example strategies (top-level for easy access)
+│   └── sma_crossover.py     # Sample SMA strategy
+├── examples/
+│   └── paper_trading.py     # Paper trading example
+├── infra/
+│   └── docker-compose.yml   # Docker setup
+├── configs/
+│   └── trading_config.yaml  # YAML config template
+├── .github/
+│   └── workflows/
+│       └── ci.yml           # CI workflow
+├── .gitignore
+├── .env.example
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+└── requirements-dev.txt
