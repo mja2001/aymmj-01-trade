@@ -1,0 +1,2 @@
+docker-compose up --build
+# Access via http://localhost:8080 for a simple dashboard (if enabled)
