@@ -1,0 +1,2 @@
+pytest -q --cov=src --cov-report=html
+# View coverage: open htmlcov/index.html
