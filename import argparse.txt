@@ -1,0 +1,24 @@
+import argparse
+import backtrader as bt
+from strategies.sma_crossover import SMAStrategy  # Example strategy
+
+def run_backtest(strategy_cls, symbol, start, end):
+    cerebro = bt.Cerebro()
+    data = bt.feeds.YahooFinanceData(dataname=symbol, fromdate=start, todate=end)
+    cerebro.adddata(data)
+    cerebro.addstrategy(strategy_cls)
+    cerebro.broker.setcash(100000)
+    cerebro.run()
+    cerebro.plot()
+    print("Backtest complete. Results saved to backtests/")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--strategy", default="sma_crossover")
+    parser.add_argument("--symbol", default="AAPL")
+    parser.add_argument("--start", default="2020-01-01")
+    parser.add_argument("--end", default="2025-01-01")
+    args = parser.parse_args()
+    
+    if args.strategy == "sma_crossover":
+        run_backtest(SMAStrategy, args.symbol, args.start, args.end)
