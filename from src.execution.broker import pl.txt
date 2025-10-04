@@ -1,0 +1,8 @@
+from src.execution.broker import place_paper_order
+from src.strategies.main import run_strategy
+
+# Run strategy and place paper orders
+data = run_strategy("sma_crossover", "SPY")
+for signal in data['signal']:  # Assume signals in data
+    if signal == 'buy':
+        place_paper_order("SPY", "buy", 10)
