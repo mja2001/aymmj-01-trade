@@ -1,0 +1,3 @@
+# Simulate SMA crossover strategy on AAPL data
+python scripts/backtest.py --strategy sma_crossover --symbol AAPL --start 2020-01-01 --end 2025-01-01
+# Output: Performance metrics (Sharpe ratio, drawdown) saved to backtests/
